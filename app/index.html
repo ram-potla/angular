@@ -2,42 +2,85 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+ <html lang="en" class="no-js"> <!--<![endif]-->
 <head>
+  <!-- Meta Information  -->
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Indian Community</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+<!-- Bootstrap -->
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+ 
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+
+<!--   <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+ 
+  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet"> -->
+ 
+  <!-- <link href="justified-nav.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" media="all" href="bootstrap/3.3.6/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="bootstrap/3.3.6/css/bootstrap.css">
+  <link rel="stylesheet" href="bootstrap/3.3.6/fonts/glyphicons-halflings-regular.svg">
+  <link rel="stylesheet" type="text/css" media="all" href="bootstrap/3.3.6/css/global.css">
+
 </head>
-<body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
+
+<body ng-app="icapp">
+    <nav id="navigation">
+      <div class="container">
+        <ul class="navlinks">
+          <li><a href="#/home">Home</a></li>
+          <li><a href="#/register">About Us</a></li>
+          <li><a href="index.html">Projects</a></li>
+          <li><a href="index.html">The Team</a></li>
+          <li><a href="index.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <header id="heading">
+      <div class="container text-right">
+        <h1>Indian Community</h1>
+        <h6>Get infomred by what's happening in your community!</h6>
+        {{message}} 
+         {{name}}
+      </div>
+    </header>
+<!-- <div ng-include = ' "templates/header.html" '</div> -->
+<ng-view> </ng-veiw> 
+<div ng-include =' "templates/footer.html" '</div>
 
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+  <![endif]
 
-  <div ng-view></div>
+<div ng-view></div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+<!-- website js -->
+  <script src="app.js"></script>
+  <script src="home/home.js"></script>
+  <script src="register/register.js"></script>
+  
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+
 </body>
 </html>

@@ -1,12 +1,34 @@
-'use strict';
+/*
+ AngularJS Project
+ @author Ram Potla 
+*/
 
-// Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+'use strict';
+ 
+/*
+    Main AngularJS Web application
+*/
+
+var app = angular.module('icapp', ['ngRoute']);
+
+/*
+    Configure the Routes
+*/
+app.config(['$routeProvider', function($routeProvider) { 
+     $routeProvider
+     	.when('/home',{templateUrl : 'home/home.html',controller : 'HomeCtrl'})
+     	.when('/register',{
+     		templateUrl : 'register/register.html',
+     		controller 	:  'RegisterCtrl'
+     	})
+    	.otherwise({
+        redirectTo: '/home'
+    	});
 }]);
+
+ // // create the controller and inject Angular's $scope
+ //    app.controller('HomeCtrl', function($scope) {
+ //        // create a message to display in our view
+ //        $scope.message = 'Everyone come and see how good I look!';
+ //    });
+
